@@ -1,7 +1,10 @@
 import { styled } from "styled-components";
 import { color_black_dark } from "../../UI/variables";
 import Button from "../Button/Button";
-import gymwork from "../../Assets/Images/gymwork.png"
+import gymwork from "../../Assets/Images/gymwork.png";
+import NewVideo from "../../Pages/NewVideo";
+import Home from "../../Pages/Home";
+import { Link } from "react-router-dom";
 
 const StyledHeader = styled.header`
     display: flex;
@@ -20,8 +23,10 @@ const StyledImg = styled.img`
 const Header =() => {
     return(
         <StyledHeader>
-            <a href="#"><StyledImg src={gymwork} alt="GymWork Logo"/></a>
+            <Link to="/"><StyledImg src={gymwork} alt="GymWork Logo"/></Link>
+            <Link to="/NewVideo">
             <Button text="Nuevo Video"/>
+            </Link>
         </StyledHeader>
         
     )
