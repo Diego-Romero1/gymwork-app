@@ -4,27 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "../Card/VideoCard";
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "red" }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
 
 export default class Responsive extends Component {
     render() {
@@ -35,8 +14,6 @@ export default class Responsive extends Component {
         slidesToShow: 4,
         slidesToScroll: 4,
         initialSlide: 0,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
         responsive: [
           {
             breakpoint: 1024,
@@ -81,4 +58,4 @@ export default class Responsive extends Component {
         </div>
       );
     }
-  }
+}

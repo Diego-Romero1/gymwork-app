@@ -1,6 +1,5 @@
 import Home from "./Pages/Home";
 import Header from "./Components/Header/Header";
-import Banner from "./Components/Banner/Banner";
 import Footer from "./Components/Footer/Footer";
 import NewVideo from "./Pages/NewVideo";
 
@@ -11,7 +10,6 @@ function App() {
   return (
     <Router>
        <Header/>
-       <Banner/>
        <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/NewVideo' element={<NewVideo/>} />

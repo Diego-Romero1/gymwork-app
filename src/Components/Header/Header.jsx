@@ -25,7 +25,7 @@ const Header =() => {
         <StyledHeader>
             <Link to="/"><StyledImg src={gymwork} alt="GymWork Logo"/></Link>
             <Link to="/NewVideo">
-            <Button text="Nuevo Video"/>
+            <Button color={color_black_dark} text="Nuevo Video"/>
             </Link>
         </StyledHeader>
         

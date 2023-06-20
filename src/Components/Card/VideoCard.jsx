@@ -5,6 +5,7 @@ const StyledCard = styled.video`
     border-radius: 4px;
     box-sizing: border-box;
     border: solid 1px ${color_frontend};
+
 `
 
 const Card = (props) => {
