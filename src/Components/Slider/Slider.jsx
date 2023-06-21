@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Card from "../Card/VideoCard";
+import Button from "../Button/Button";
+import { color_fuerza } from "../../UI/variables";
 
 
 export default class Responsive extends Component {
@@ -44,7 +46,7 @@ export default class Responsive extends Component {
     };
       return (
         <div>
-          <h2> Responsive </h2>
+          <Button color={color_fuerza} text="Fuerza"/>
           <Slider {...settings}>
             <Card content="1"></Card>
             <Card content="2"></Card>

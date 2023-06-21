@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import gymbanner from "../../Assets/Images/gymbanner.jpg";
 import Card from "../Card/VideoCard";
 import Button from "../Button/Button";
-import { color_frontend, color_grey_light } from "../../UI/variables";
+import {color_primary, color_frontend, color_grey_light } from "../../UI/variables";
 
 const StyledBanner = styled.div`
     display: flex;
@@ -35,7 +35,7 @@ const Banner = () => {
     return (
         <StyledBanner>
             <StyledDiv>
-            <Button className="btn" color={color_frontend}  text="Hipertrofia"/>
+            <Button className="btn" color={color_primary}  text="Hipertrofia"/>
             <h2 className="title">Gane mas musculo</h2>
             <p className="des">La hipertrofia es ejercitarse para estimular los mosculos</p>
             </StyledDiv>
