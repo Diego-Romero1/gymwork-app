@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import gymbanner from "../../Assets/Images/gymbanner.jpg";
 import Card from "../Card/VideoCard";
 import Button from "../Button/Button";
-import {color_primary, color_frontend, color_grey_light } from "../../UI/variables";
+import {color_primary, color_grey_light } from "../../UI/variables";
 
 const StyledBanner = styled.div`
     display: flex;
