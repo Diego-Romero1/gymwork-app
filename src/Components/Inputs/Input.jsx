@@ -19,8 +19,18 @@ const StyledInput = styled.input`
 `
 
 const Input = (props) => {
+    const handleChange = (e) => {
+       props.setValue(e.target.value);
+       console.log(e.target.value)
+    }
     return(
-        <StyledInput className={props.className} type={props.type} placeholder={props.placeholder}/>
+        <StyledInput 
+         className={props.className}
+         type={props.type} placeholder={props.placeholder}
+         value={props.value}
+         onChange={handleChange}
+         required
+        />
     )
     
 }

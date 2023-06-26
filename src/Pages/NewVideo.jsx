@@ -1,5 +1,7 @@
+import React, { useContext } from "react"
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
+import { Context } from "../ContextProvider";
 import { color_black_medium, color_primary_medium, color_black_lighter, color_grey_light } from "../UI/variables";
 import Input from "../Components/Inputs/Input";
 import Button from "../Components/Button/Button";
@@ -28,28 +30,69 @@ export const StyledNewVideo = styled.main`
 `
 
 const NewVideo = () => {
+    const {
+        title,
+        setTitle,
+        videoLink,
+        setVideoLink,
+        imageLink,
+        setImageLink,
+        category,
+        setCategory,
+        description,
+        setDescription,
+        securityCode,
+        setSecurityCode,
+    } = useContext(Context)
     return (
         <StyledNewVideo>
-            <div className="inputs-wrapper">
-                <h1 className="title">Nuevo Video</h1>
-                <Input type="text" placeholder="Titulo" />
-                <Input type="text" placeholder="Link del video" />
-                <Input type="text" placeholder="Link imagen de video" />
-                <Input type="text" placeholder="Escoja una categoria" />
-                <Input className="input-description" type="text" placeholder="Descripcion" />
-                <Input type="text" placeholder="Codigo de seguridad" />
-            </div>
-        
-            <div className="buttons-wrapper">
-                <div>
-                    <Button text="Guardar" color={color_primary_medium} />
-                    <Button text="Limpiar" color={color_black_lighter} />
+            <form>
+                <div className="inputs-wrapper">
+                    <h1 className="title">Nuevo Video</h1>
+                    <Input type="text"
+                        placeholder="Titulo"
+                        value={title}
+                        setValue={setTitle}
+                    />
+                    <Input type="text"
+                        placeholder="Link del video"
+                        value={videoLink}
+                        setValue={setVideoLink}
+                    />
+                    <Input type="text"
+                        placeholder="Link imagen de video"
+                        value={imageLink}
+                        setValue={setImageLink}
+                    />
+                    <Input type="text"
+                        placeholder="Escoja una categoria"
+                        value={category}
+                        setValue={setCategory}
+                    />
+                    <Input className="input-description"
+                        type="text"
+                        placeholder="Descripcion"
+                        value={description}
+                        setValue={setDescription}
+                    />
+                    <Input type="text"
+                        placeholder="Codigo de seguridad"
+                        value={securityCode}
+                        setValue={setSecurityCode}
+                    />
                 </div>
-                <Link to="/NewCategory">
-                    <Button text="Nueva Categoria" color={color_primary_medium} />
-                </Link>
 
-            </div>
+                <div className="buttons-wrapper">
+                    <div>
+                        <Button text="Guardar" color={color_primary_medium} />
+                        <Button text="Limpiar" color={color_black_lighter} />
+                    </div>
+                    <Link to="/NewCategory">
+                        <Button text="Nueva Categoria" color={color_primary_medium} />
+                    </Link>
+                </div>
+            </form>
+
         </StyledNewVideo>
     )
 }
