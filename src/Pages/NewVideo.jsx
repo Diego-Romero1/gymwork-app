@@ -1,10 +1,11 @@
 import React, { useContext } from "react"
 import { styled } from "styled-components";
 import { Link } from "react-router-dom";
-import { Context } from "../ContextProvider";
+import { Context } from "../ContextProviders/ContextProvider";
 import { color_black_medium, color_primary_medium, color_black_lighter, color_grey_light } from "../UI/variables";
 import Input from "../Components/Inputs/Input";
 import Button from "../Components/Button/Button";
+import CategoryOption from "../Components/Select/CategoryOptions";
 
 export const StyledNewVideo = styled.main`
    
@@ -64,7 +65,7 @@ const NewVideo = () => {
                         value={imageLink}
                         setValue={setImageLink}
                     />
-                    <Input type="text"
+                    <CategoryOption type="text"
                         placeholder="Escoja una categoria"
                         value={category}
                         setValue={setCategory}

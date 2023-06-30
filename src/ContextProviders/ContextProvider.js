@@ -10,11 +10,14 @@ export const ContextProvider = ({ children }) => {
     const [description, setDescription] = useState('');
     const [securityCode, setSecurityCode] = useState('');
 
-
-    return (
+    const [newCategory, setNewCategory] = useState('');
+    const [categoryDes, setCategoryDes] = useState('');
+    const [color, setColor] = useState('');
+    const [categoryCode, setCategoryCode] = useState('');
+    return (        
         <Context.Provider
         value={{
-            title,
+            title, 
             setTitle,
             videoLink,
             setVideoLink,
@@ -26,6 +29,10 @@ export const ContextProvider = ({ children }) => {
             setDescription,
             securityCode,
             setSecurityCode,
+            newCategory, setNewCategory,
+            categoryDes, setCategoryDes,
+            color, setColor,
+            categoryCode, setCategoryCode
         }}
         >
         {children}

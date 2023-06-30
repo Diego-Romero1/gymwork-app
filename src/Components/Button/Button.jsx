@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { color_black_dark, color_grey_light } from "../../UI/variables";
+import { color_grey_light } from "../../UI/variables";
 
 const StyledButton = styled.button`
 color: ${color_grey_light};
@@ -19,7 +19,7 @@ margin: 1rem;
 
 const Button = (props) => {
     return (
-        <StyledButton className={props.className} color={props.color} >{props.text}</StyledButton>
+        <StyledButton className={props.className} color={props.color}>{props.text}</StyledButton>
     )   
 }
 

@@ -1,3 +1,5 @@
+import React, { useContext } from "react";
+import { Context } from "../ContextProviders/ContextProvider";
 import { styled } from "styled-components";
 import { color_black_medium } from "../UI/variables";
 import Input from "../Components/Inputs/Input";
@@ -26,20 +28,47 @@ const StyledCategory = styled.main`
 `
 
 const NewCategory = () => {
+    const {
+        newCategory,
+        setNewCategory,
+        categoryDes,
+        setCategoryDes,
+        color,
+        setColor,
+        categoryCode,
+        setCategoryCode} = useContext(Context)
     return (
         <StyledCategory>
-            <div className="inputs-wrapper">
-                <h1 className="title">Nueva Categoria</h1>
-                <Input type="text" placeholder="Nueva Categoria" />
-                <Input type="text" placeholder="Descripcion" />
-                <Input type="color" />
-                <Input type="text" placeholder="Codigo de seguridad"/>
-            </div>
-            <div className="buttons-wrapper">
+            <form>
+                <div className="inputs-wrapper">
+                    <h1 className="title">Nueva Categoria</h1>
+                    <Input
+                        type="text"
+                        placeholder="Nueva Categoria"
+                        value={newCategory}
+                        setValue={setNewCategory}
+                    />
+                    <Input
+                        type="text"
+                        placeholder="Descripcion"
+                        value={categoryDes}
+                        setValue={setCategoryDes} />
+                    <Input
+                        type="color"
+                        value={color}
+                        setValue={setColor} />
+                    <Input
+                        type="text"
+                        placeholder="Codigo de seguridad"
+                        value={categoryCode}
+                        setValue={setCategoryCode} />
+                </div>
+                <div className="buttons-wrapper">
                     <Button text="Guardar" color={color_primary_medium} />
                     <Button text="Limpiar" color={color_black_lighter} />
-            </div>
-           
+                </div>
+
+            </form>
         </StyledCategory>
     )
 }

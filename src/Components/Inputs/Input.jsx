@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
-import { color_black_light, color_primary_medium } from "../../UI/variables";
+import { color_black_light, color_primary_medium, color_grey_light } from "../../UI/variables";
 
 const StyledInput = styled.input`
+    color: ${color_grey_light};
     background-color: ${color_black_light} ;
     width: 1000px;
     height: 50px;
@@ -9,6 +10,9 @@ const StyledInput = styled.input`
     border-radius: 4px;
     border-style: none;
     outline: none;
+    &::placeholder{
+        color: ${color_grey_light};
+    }
     &:focus{
         border-bottom: solid 5px  ${color_primary_medium};
     }

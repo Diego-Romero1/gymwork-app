@@ -1,5 +1,6 @@
 import React from 'react';
-import { ContextProvider } from "./ContextProvider";
+import { ContextProvider } from './ContextProviders/ContextProvider';
+import { Category } from './ContextProviders/ObjectProvider';
 import Home from "./Pages/Home";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -13,11 +14,13 @@ function App() {
     <Router>
       <Header />
       <ContextProvider>
-        <Routes>
+        <Category>
+          <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/NewVideo' element={<NewVideo />} />
             <Route path='/NewCategory' element={<NewCategory />} />
-        </Routes>
+          </Routes>
+        </Category>
       </ContextProvider>
       <Footer />
     </Router>
