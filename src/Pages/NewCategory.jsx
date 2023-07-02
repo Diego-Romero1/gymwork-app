@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 import { color_black_medium } from "../UI/variables";
 import Input from "../Components/Inputs/Input";
 import Button from "../Components/Button/Button";
+import DataTable from "../Components/Table/Table";
 import { color_primary_medium, color_black_lighter, color_grey_light } from "../UI/variables";
 
 const StyledCategory = styled.main`
@@ -69,6 +70,7 @@ const NewCategory = () => {
                 </div>
 
             </form>
+            <DataTable/>
         </StyledCategory>
     )
 }
