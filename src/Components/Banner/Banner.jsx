@@ -1,4 +1,7 @@
 import { styled } from "styled-components";
+import React,{ useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { search } from "../../Api/Api";
 import gymbanner from "../../Assets/Images/gymbanner.jpg";
 import Card from "../Card/VideoCard";
 import Button from "../Button/Button";
@@ -31,13 +34,28 @@ const StyledDiv = styled.div`
     }
 `
 
-const Banner = () => {
+const Banner = ({url}) => {
+
+    const [posts, setPost] = useState([])
+
+    const {id} = useParams()
+    console.log(posts)
+
+    useEffect(() => {
+        search(url, setPost)
+        .catch( error => console.log(error))
+    }, [url])
+        const firstPost = posts[0] || {};
+         const {title, description, category} = firstPost
+
+    
+
     return (
         <StyledBanner>
             <StyledDiv>
-            <Button className="btn" color={color_primary}  text="Hipertrofia"/>
-            <h2 className="title">Gane mas musculo</h2>
-            <p className="des">La hipertrofia es ejercitarse para estimular los mosculos</p>
+                    <Button className="btn" color={color_primary}  text={category}/>
+                    <h2 className="title">{title}</h2>
+                    <p className="des">"{description}</p>
             </StyledDiv>
             <Card/>
         </StyledBanner>

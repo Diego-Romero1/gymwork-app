@@ -7,6 +7,7 @@ import Footer from "./Components/Footer/Footer";
 import NewVideo from "./Pages/NewVideo";
 import NewCategory from "./Pages/NewCategory";
 
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -24,10 +25,6 @@ function App() {
       </ContextProvider>
       <Footer />
     </Router>
-
-
-
-
   );
 }
 

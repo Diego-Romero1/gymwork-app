@@ -1,4 +1,4 @@
-import { styled} from "styled-components";
+import { styled } from "styled-components";
 import { color_black_medium } from "../UI/variables";
 import Banner from "../Components/Banner/Banner";
 import Carrousel from "../Components/Carrousel/Carrousel";
@@ -11,10 +11,10 @@ const StyledHome = styled.main`
 const Home = () => {
     return (
         <StyledHome>
-            <Banner/>
-            <Carrousel/>
-            <Carrousel/>
-            <Carrousel/>
+            <Banner url={"/videos"}/>
+            <Carrousel />
+            <Carrousel />
+            <Carrousel />
         </StyledHome>
     )
 }

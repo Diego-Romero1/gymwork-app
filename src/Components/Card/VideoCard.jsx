@@ -10,7 +10,7 @@ const StyledCard = styled.video`
 
 const Card = (props) => {
     return(
-        <StyledCard controls src="https://www.youtube.com/embed/tIUuqZaq_8s"></StyledCard>
+        <StyledCard controls src=""></StyledCard>
     )
 }
 

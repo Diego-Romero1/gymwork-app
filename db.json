@@ -1,0 +1,42 @@
+{
+  "categories": [
+      {
+          "id": 1,
+          "name": "Hipertrofia",
+          "description": "La hipertrofia es un metodo para ganar masa muscular",
+          "color": "#f1f1f1",
+          "categorycode": "111"
+
+      },
+      {
+        "id": 2,
+        "name": "Fuerza",
+        "description": "El entrenamiento de fuerza mejora la resistencia",
+        "color": "#f1f1f1",
+        "categorycode": "111"
+
+    }
+  ],
+  "videos": [
+      {
+          "id": 1,
+          "title": "Gane más musculo",
+          "url":"",
+          "linkimage": "",
+          "category": "Hipertrofia",
+          "description": "La hipertrofia es un método para ganar masa muscular",
+          "videocode": ""
+          
+      },
+      {
+        "id": 2,
+        "title": "Gane más fuerza",
+        "url":"",
+        "linkimage": "",
+        "category": "Hipertrofia",
+        "description": "El entrenamiento de fuerza mejora la resistencia",
+        "videocode": ""
+        
+    }
+  ]
+}

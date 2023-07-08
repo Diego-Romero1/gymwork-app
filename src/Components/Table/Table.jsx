@@ -1,4 +1,6 @@
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
+import { search } from "../../Api/Api";
 import { color_black_medium, color_grey_light, color_primary_medium } from "../../UI/variables";
 
 const StyledDiv = styled.div`
@@ -22,8 +24,19 @@ const StyledDiv = styled.div`
 `
 
 const DataTable = () => {
+
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        search("/categories", setCategories)
+    }, [])
+
+    console.log(categories)
+
     return (
         <StyledDiv>
+
+
             <table>
                 <tr>
                     <th>Nombre</th>
@@ -31,16 +44,25 @@ const DataTable = () => {
                     <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
-                <tr>
-                    <td>Nombre</td>
-                    <td>Descripcion</td>
-                    <td>Editar</td>
-                    <td>Eliminar</td>
-                </tr>
-            </table>
+                {
+                    categories.map(category => {
 
+                        const { id, name, description } = category;
+
+                        return (
+                            <tr key={id}>
+                                <td>{name}</td>
+                                <td>{description}</td>
+                                <td>Editar</td>
+                                <td>Eliminar</td>
+                            </tr>
+                        )
+
+                    })
+                }
+            </table>
         </StyledDiv>
     )
 }
 
-export default DataTable
+export default DataTable;
