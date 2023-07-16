@@ -12,10 +12,16 @@
         "id": 2,
         "name": "Fuerza",
         "description": "El entrenamiento de fuerza mejora la resistencia",
-        "color": "#f1f1f1",
+        "color": "#00C86F",
         "categorycode": "111"
-
-    }
+      },
+      {
+        "id": 3,
+        "name": "Calistenia",
+        "description": "Usar el propio peso del cuerpo para el entrenamiento",
+        "color": "#00C86F",
+        "categorycode": "111"
+      }
   ],
   "videos": [
       {

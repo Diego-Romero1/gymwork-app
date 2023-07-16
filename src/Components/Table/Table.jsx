@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { styled } from "styled-components";
-import { search } from "../../Api/Api";
+import { objectContext } from "../../ContextProviders/ObjectProvider";
 import { color_black_medium, color_grey_light, color_primary_medium } from "../../UI/variables";
 
 const StyledDiv = styled.div`
@@ -24,19 +24,9 @@ const StyledDiv = styled.div`
 `
 
 const DataTable = () => {
-
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() => {
-        search("/categories", setCategories)
-    }, [])
-
-    console.log(categories)
-
+    const {categories} = useContext(objectContext)
     return (
         <StyledDiv>
-
-
             <table>
                 <tr>
                     <th>Nombre</th>

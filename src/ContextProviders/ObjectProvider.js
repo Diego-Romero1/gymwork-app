@@ -1,27 +1,26 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
+import { search } from "../Api/Api";
 
 export const objectContext = createContext();
 
 export const Category = ({ children }) => {
 
-    const [categories, setCategories] = useState([
-        {
-            "id": "1",
-            "name": "Hipertrofia",
-            "color": ""
-        },
-        {
-            "id": "2",
-            "name": "Fuerza",
-            "color": ""
-        },
-        {
-            "id": "3",
-            "name": "Calistenia",
-            "color": ""
-        }
-    ]);
-    const [category, setCategory] = useState("")
+    const [categories, setCategories] = useState([]);
+    const [category, setCategory] = useState("");
+    const [videos, setVideos] = useState([]);
+
+    useEffect(() => {
+        search("/categories", setCategories)
+    }, [])
+
+    useEffect(() => {
+        search("/videos", setVideos)
+    }, [])
+
+    const filteredVideos = videos.filter(video => video.category === category.name)
+
+
+    console.log(categories)
 
     return (
         <objectContext.Provider
@@ -29,7 +28,8 @@ export const Category = ({ children }) => {
                 categories,
                 setCategories,
                 category,
-                setCategory
+                setCategory,
+                filteredVideos
             }}
         >
             {children}

@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 import React,{ useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { search } from "../../Api/Api";
 import gymbanner from "../../Assets/Images/gymbanner.jpg";
 import Card from "../Card/VideoCard";
@@ -38,7 +37,6 @@ const Banner = ({url}) => {
 
     const [posts, setPost] = useState([])
 
-    const {id} = useParams()
     console.log(posts)
 
     useEffect(() => {
